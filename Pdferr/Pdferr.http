@@ -1,0 +1,6 @@
+@Pdferr_HostAddress = http://localhost:5111
+
+GET {{Pdferr_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

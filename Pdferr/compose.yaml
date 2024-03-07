@@ -1,0 +1,23 @@
+services:
+  pdffer:
+    image: pdffer-backend:v1
+    ports:
+      - "4321:8080"
+    networks:
+      - pdfferNet
+    environment:
+      CONSUMER_KEY: POCKETAPI_CONSUMER
+      ACCESS_TOKEN: POCKETAPI_ACCESS
+      GNEWS_KEY: GNEWS
+    depends_on:
+      - parser
+
+  parser:
+    image: wangqiru/mercury-parser-api
+    networks:
+      - pdfferNet
+
+
+
+networks:
+  pdfferNet: {}
